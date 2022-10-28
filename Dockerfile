@@ -7,4 +7,4 @@ WORKDIR /app
 COPY . .
 
 
-CMD [ "python ./stopvoice.py" ]
+CMD [ "python", "./stopvoice.py" ]
