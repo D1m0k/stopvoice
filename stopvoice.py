@@ -20,5 +20,5 @@ async def event_handler(event):
             await event.respond('__Пользователь ограничил функцию голосовых сообщений__')
             await client.delete_message(client.chat_id, [event.id])
 
-client.start()
+client.start(os.environ['PHONE'])
 client.run_until_disconnected()
