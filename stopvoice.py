@@ -19,6 +19,6 @@ async def event_handler(event):
     if (event.chat_id > 0) and (event.chat_id not in whitelist):
         if (event.message.voice):
             await event.respond('__Пользователь ограничил функцию голосовых сообщений__')
-            await client.delete_message(client.chat_id, [event.id])
+            await client.delete_messages(client.chat_id, [event.id])
 
 client.run_until_disconnected()
