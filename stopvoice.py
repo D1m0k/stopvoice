@@ -11,6 +11,7 @@ api_id = os.environ['ID']
 api_hash = os.environ['HASH']
 username = os.environ['NAME']
 client = TelegramClient(username, api_id, api_hash)
+client.start(os.environ['PHONE'])
 
 @client.on(events.NewMessage(incoming = True))
 async def event_handler(event):
@@ -20,5 +21,4 @@ async def event_handler(event):
             await event.respond('__Пользователь ограничил функцию голосовых сообщений__')
             await client.delete_message(client.chat_id, [event.id])
 
-#client.start(os.environ['PHONE'])
 client.run_until_disconnected()
