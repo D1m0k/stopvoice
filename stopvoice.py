@@ -7,9 +7,9 @@ import os
 
 os.chdir(pathlib.Path(__file__).parent.resolve())
 
-api_id = print(os.environ['ID'])
-api_hash = print(os.environ['HASH'])
-username = print(os.environ['NAME'])
+api_id = os.environ['ID']
+api_hash = os.environ['HASH']
+username = os.environ['NAME']
 client = TelegramClient(username, api_id, api_hash)
 
 @client.on(events.NewMessage(incoming = True))
